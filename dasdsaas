@@ -1,0 +1,105 @@
+from __future__ import print_function
+import numpy as np
+from pyimsl.math.cubSplineValue import cubSplineValue
+from pyimsl.math.cubSplineInterpECnd import cubSplineInterpECnd
+from tabulate import tabulate
+%matplotlib inline
+import matplotlib.pyplot as plt
+
+headers = ['#', 'x', 'Interpolant', 'F(x)', 'Error']
+error_headers =  ['Relation', 'Value'] 
+def F(x):
+    return 10 * x * pow(np.e, -x)
+
+
+f = open('output.dat', "w", encoding="utf-8")
+print('L7', file=f)
+print('Danishevskii Danila, 3430302/90003', file=f)
+print('Function: 10*x*e^(-x)', file=f)
+xVals = np.linspace(a, b, 100)
+
+a, b = 0, 2
+N = 10
+print('Interval: ['+ str(a) +', '+ str(b) +']', file=f)
+
+j = 0
+max_errors = np.array([])
+xdata_graph = np.empty((N+1))
+fdata_graph =  np.empty((N+1))
+
+#plt.title('Cubic-spline interpolation')
+fig, axs = plt.subplots(5, figsize=(12,35))
+print(axs)
+#plt.plot(x, F(x))
+#plt.legend(['True function f(x)', 'Cubic Spline'])
+z = 0
+while(N <= 160): # 10, 20, 40, 80, 160 numbers of partitions
+    print("\n\n\nNumber of Interpolation partitions: " + str(N), file=f)
+
+    xdata = np.empty((N + 1))
+    fdata = np.empty((N + 1))
+    x = np.empty((N*4 + 1))
+    s = np.empty((N*4 + 1))
+
+    h = (b - a)/N
+    h_x = (b - a)/(4 * N)
+
+    #x and f(x) values
+    for i in range(N+1):
+        xdata[i] = a + i*h
+        fdata[i] = F(xdata[i])
+    
+    
+ #   plt.plot(xdata, fdata)
+   # plt.legend(['Linear', 'Cubic Spline', 'True'])
+    #plt.axis([-0.05, 6.33, -1.05, 1.05])
+    #plt.title('Cubic-spline interpolation')
+    
+    #Grid for spline
+    for i in range(4*N + 1):
+        x[i] = a + i*h_x
+
+    pp = cubSplineInterpECnd(xdata, fdata)
+    outputData = np.empty((N*4 + 1, 5))
+
+    counter = 0
+    for k in range(N*4 + 1):
+        ppVal = cubSplineValue(x[k], pp)
+        if ppVal == F(x[k]): #and (x[k] == a or x[k] == b):
+            counter += 1
+
+        outputData[k] = np.array([k + 1, x[k], ppVal, F(x[k]), abs(F(x[k]) - ppVal)])
+        s[k] = ppVal
+
+  #  plt.figure()
+    axs[j].plot(x, s, xdata, fdata, '--', linewidth=0.7)
+   # plt.legend(['Cubic Spline', 'Linear' ])
+
+    print("Function and Interpolant values matched in knots " + str(counter) + " times", file=f)
+
+    max_error = np.amax(outputData, axis=0)[4]
+    max_errors = np.append(max_errors, max_error)
+
+    table = tabulate(outputData, headers, tablefmt="fancy_grid", floatfmt=('.0f', '.2f', '.7f', '.7f', '.7e'))
+    print(table, file=f)
+
+    print("Max error: " + '{:.7e}'.format(max_error), file=f)
+    N = N*2
+    j += 1
+
+plt.show()
+print("\n\nErrors' relations:", file=f)
+
+N = 10
+j = 0
+while(N <= 160):
+    
+    error_ratio = max_errors[j]/max_errors[j+1]
+    print('     Error(' + str(N) +')/Error(' + str(N*2) + ') = ' + str(error_ratio), file=f)
+    j += 1
+    N = N*2
+
+    if j == 4:
+        break
+
+f.close()
