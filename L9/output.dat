@@ -1,0 +1,179 @@
+L9
+Danishevskii Danila, 3430302/90003
+Function: 10*x*e^(-x)
+Interval: [0, 2]
+
+
+
+			Spline order: 1
+
+Number of Interpolation partitions: 10
+	Max error: 8.6106665e-02
+
+Number of Interpolation partitions: 20
+	Max error: 2.3196003e-02
+
+Number of Interpolation partitions: 40
+	Max error: 6.0201219e-03
+
+Number of Interpolation partitions: 80
+	Max error: 1.5334861e-03
+
+
+Max Errors
+╒═════╤══════════════════╕
+│   N │   Function Error │
+╞═════╪══════════════════╡
+│  10 │    8.6106665e-02 │
+├─────┼──────────────────┤
+│  20 │    2.3196003e-02 │
+├─────┼──────────────────┤
+│  40 │    6.0201219e-03 │
+├─────┼──────────────────┤
+│  80 │    1.5334861e-03 │
+╘═════╧══════════════════╛
+
+Errors' relations:
+     Error(10)/Error(20) = 3.7121336850733364
+     Error(20)/Error(40) = 3.853078673058126
+     Error(40)/Error(80) = 3.925775425044379
+
+
+
+			Spline order: 2
+
+Number of Interpolation partitions: 10
+	Max error: 9.3204847e-03
+
+Number of Interpolation partitions: 20
+	Max error: 1.2727712e-03
+
+Number of Interpolation partitions: 40
+	Max error: 1.6624471e-04
+
+Number of Interpolation partitions: 80
+	Max error: 2.1240785e-05
+
+
+Max Errors
+╒═════╤══════════════════╕
+│   N │   Function Error │
+╞═════╪══════════════════╡
+│  10 │    9.3204847e-03 │
+├─────┼──────────────────┤
+│  20 │    1.2727712e-03 │
+├─────┼──────────────────┤
+│  40 │    1.6624471e-04 │
+├─────┼──────────────────┤
+│  80 │    2.1240785e-05 │
+╘═════╧══════════════════╛
+
+Errors' relations:
+     Error(10)/Error(20) = 7.322985163573662
+     Error(20)/Error(40) = 7.656010138544908
+     Error(40)/Error(80) = 7.826674615509923
+
+
+
+			Spline order: 3
+
+Number of Interpolation partitions: 10
+	Max error: 1.3964491e-03
+
+Number of Interpolation partitions: 20
+	Max error: 9.9301274e-05
+
+Number of Interpolation partitions: 40
+	Max error: 6.6198084e-06
+
+Number of Interpolation partitions: 80
+	Max error: 4.2729241e-07
+
+
+Max Errors
+╒═════╤══════════════════╕
+│   N │   Function Error │
+╞═════╪══════════════════╡
+│  10 │    1.3964491e-03 │
+├─────┼──────────────────┤
+│  20 │    9.9301274e-05 │
+├─────┼──────────────────┤
+│  40 │    6.6198084e-06 │
+├─────┼──────────────────┤
+│  80 │    4.2729241e-07 │
+╘═════╧══════════════════╛
+
+Errors' relations:
+     Error(10)/Error(20) = 14.062750673879432
+     Error(20)/Error(40) = 15.000626515525052
+     Error(40)/Error(80) = 15.492455128093832
+
+
+
+			Spline order: 4
+
+Number of Interpolation partitions: 10
+	Max error: 2.1406873e-04
+
+Number of Interpolation partitions: 20
+	Max error: 7.9291983e-06
+
+Number of Interpolation partitions: 40
+	Max error: 2.6983638e-07
+
+Number of Interpolation partitions: 80
+	Max error: 8.7999109e-09
+
+
+Max Errors
+╒═════╤══════════════════╕
+│   N │   Function Error │
+╞═════╪══════════════════╡
+│  10 │    2.1406873e-04 │
+├─────┼──────────────────┤
+│  20 │    7.9291983e-06 │
+├─────┼──────────────────┤
+│  40 │    2.6983638e-07 │
+├─────┼──────────────────┤
+│  80 │    8.7999109e-09 │
+╘═════╧══════════════════╛
+
+Errors' relations:
+     Error(10)/Error(20) = 26.997525188873553
+     Error(20)/Error(40) = 29.385208729025422
+     Error(40)/Error(80) = 30.663535521103373
+
+
+
+			Spline order: 5
+
+Number of Interpolation partitions: 10
+	Max error: 3.3729053e-05
+
+Number of Interpolation partitions: 20
+	Max error: 6.5249681e-07
+
+Number of Interpolation partitions: 40
+	Max error: 1.1341246e-08
+
+Number of Interpolation partitions: 80
+	Max error: 1.8691759e-10
+
+
+Max Errors
+╒═════╤══════════════════╕
+│   N │   Function Error │
+╞═════╪══════════════════╡
+│  10 │    3.3729053e-05 │
+├─────┼──────────────────┤
+│  20 │    6.5249681e-07 │
+├─────┼──────────────────┤
+│  40 │    1.1341246e-08 │
+├─────┼──────────────────┤
+│  80 │    1.8691759e-10 │
+╘═════╧══════════════════╛
+
+Errors' relations:
+     Error(10)/Error(20) = 51.692287801869696
+     Error(20)/Error(40) = 57.53307859141562
+     Error(40)/Error(80) = 60.675114070767236
